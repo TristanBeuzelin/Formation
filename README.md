@@ -6,3 +6,5 @@ Formation Django Anonymines
 * Description de l'architecture d'un projet
 * Lancement d'une application Django
 * Description de l'architecture d'une application
+## Points d'amélioration :
+* Création d'un environnement virtuel
