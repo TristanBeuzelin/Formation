@@ -19,7 +19,6 @@ from django.conf.urls import url
 from tweet import views
 
 urlpatterns = [
-    url(r'^$', views.index),
     url(r'^tweet/', include('tweet.urls')),
     path('admin/', admin.site.urls),
 ]
