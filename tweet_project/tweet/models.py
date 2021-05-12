@@ -8,7 +8,6 @@ from rest_framework.authtoken.models import Token
 
 class Tweet(models.Model):
     text = models.CharField(max_length=300, null=False, blank=False)
-    owner = models.ForeignKey('auth.User', related_name='tweets', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     likes_count = models.IntegerField(default=0, null=False, blank=False, editable=False)
     comment_count = models.IntegerField(default=0, null=False, blank=False, editable=False)
@@ -18,7 +17,6 @@ class Tweet(models.Model):
 
 class Like(models.Model):
     tweet = models.ForeignKey('Tweet', related_name='like', on_delete=models.CASCADE)
-    author = models.ForeignKey('auth.User', related_name='authors',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.tweet.text
